@@ -4,6 +4,10 @@ A MIDI guitar using a BBC micro:bit
 
 ## Overview
 
+
+(TODO: Architecture diagram goes here)
+
+
 * `tone.py` This monitors the pads on the guitar which decide the tones (but not the plucking gestures) and when it notices changes (i.e. when keys are newly pressed or released), it sends a message via serial port that simply states which keys are currently pressed.
 
 * `artmidi.py` This listens for messages from the microbit monitoring the tone pads, and also monitors the articulation pads (those that decide if you're 'plucking' a string or not) and when it notices changes, it creates MIDI messages representing note on and note off events.  It sends these MIDI messages to the computer via serial, to be processed and to eventually trigger audio events in garageband or whatever other software is listening for MIDI events.
